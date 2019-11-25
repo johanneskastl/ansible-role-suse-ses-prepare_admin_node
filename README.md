@@ -15,6 +15,9 @@ Role Variables
 'admin_node_salt_services': Name of the salt-master service, by default `salt-master`.
 'admin_node_deepsea_packages': Packages needed for deepsea.
 
+`public_network`: Which network to use as the public network.
+`cluster_network`: Which network to use as the internal cluster network.
+
 Dependencies
 ------------
 

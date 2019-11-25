@@ -32,3 +32,11 @@
     owner: "root"
     group: "root"
     mode: "0644"
+
+- name: "Create /srv/pillar/ceph/master_minion.sls from template"
+  template:
+    src: "srv_pillar_ceph_master_minion.sls.j2"
+    dest: "/srv/pillar/ceph/master_minion.sls"
+    owner: "root"
+    group: "root"
+    mode: "0644"

@@ -7,3 +7,6 @@ admin_node_salt_packages:
 
 admin_node_salt_services:
   - salt-master
+
+admin_node_deepsea_packages:
+  - deepsea

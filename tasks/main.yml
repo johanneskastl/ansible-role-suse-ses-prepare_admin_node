@@ -12,3 +12,7 @@
     enabled: "true"
   with_items:
     - "{{ admin_node_salt_services }}"
+
+- name: "Install deepsea packages"
+  package:
+    name: "{{ admin_node_deepsea_packages }}"

@@ -11,7 +11,9 @@ None.
 Role Variables
 --------------
 
-None.
+'admin_node_salt_packages': Packages needed to run salt master and minion on the admin node.
+'admin_node_salt_services': Name of the salt-master service, by default `salt-master`.
+'admin_node_deepsea_packages': Packages needed for deepsea.
 
 Dependencies
 ------------

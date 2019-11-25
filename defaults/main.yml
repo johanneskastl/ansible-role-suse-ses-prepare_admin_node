@@ -1,0 +1,9 @@
+---
+# suse-ses-prepare_admin_node/defaults/main.yml
+
+admin_node_salt_packages:
+  - salt-master
+  - salt-minion
+
+admin_node_salt_services:
+  - salt-master

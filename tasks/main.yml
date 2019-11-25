@@ -7,7 +7,8 @@
 
 - name: "Start the salt services"
   service:
-    name: "{{ admin_node_salt_services }}"
+    name: "{{ item }}" 
     state: "started"
     enabled: "true"
-
+  with_items:
+    - "{{ admin_node_salt_services }}"

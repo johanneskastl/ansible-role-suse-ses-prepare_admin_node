@@ -1,0 +1,36 @@
+## Cluster Assignment
+cluster-ceph/cluster/*.sls
+
+## Roles
+# ADMIN
+role-master/cluster/*-suse-ses-admin.training.b1-systems.de.sls
+role-admin/cluster/*-suse-ses-admin.training.b1-systems.de.sls
+
+# Monitoring
+role-prometheus/cluster/*-suse-ses-admin.training.b1-systems.de.sls
+role-grafana/cluster/*-suse-ses-admin.training.b1-systems.de.sls
+
+# MON
+role-mon/cluster/*-suse-ses-mon0*.sls
+
+# MGR (mgrs are usually colocated with mons)
+role-mgr/cluster/*-suse-ses-mon0*.sls
+
+# MDS
+role-mds/cluster/*-suse-ses-mon0*.sls
+
+# IGW
+#role-igw/cluster/igw*.sls
+
+# RGW
+#role-rgw/cluster/rgw*.sls
+
+# NFS
+#role-ganesha/cluster/ganesha*.sls
+
+# COMMON
+config/stack/default/global.yml
+config/stack/default/ceph/cluster.yml
+
+# Storage
+role-storage/cluster/data*.sls

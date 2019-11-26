@@ -40,3 +40,11 @@
     owner: "salt"
     group: "salt"
     mode: "0644"
+
+- name: "Create /srv/pillar/ceph/proposals/policy.cfg from template"
+  template:
+    src: "srv_pillar_ceph_proposals_policy.cfg.j2"
+    dest: "/srv/pillar/ceph/proposals/policy.cfg"
+    owner: "salt"
+    group: "salt"
+    mode: "0644"

@@ -10,3 +10,4 @@ admin_node_salt_services:
 
 admin_node_deepsea_packages:
   - deepsea
+  - deepsea-cli

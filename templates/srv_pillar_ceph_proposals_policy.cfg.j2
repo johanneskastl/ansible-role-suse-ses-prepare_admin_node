@@ -20,13 +20,16 @@ role-mgr/cluster/*-suse-ses-mon0*.sls
 role-mds/cluster/*-suse-ses-mon0*.sls
 
 # IGW
-#role-igw/cluster/igw*.sls
+role-igw/cluster/*-suse-ses-mon0*.sls
 
 # RGW
-#role-rgw/cluster/rgw*.sls
+role-rgw/cluster/*-suse-ses-mon0*.sls
 
 # NFS
-#role-ganesha/cluster/ganesha*.sls
+role-ganesha/cluster/*-suse-ses-mon0*.sls
+
+# openAttic
+role-openattic/cluster/*-suse-ses-admin*.sls
 
 # COMMON
 config/stack/default/global.yml

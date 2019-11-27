@@ -41,6 +41,14 @@
     group: "salt"
     mode: "0644"
 
+- name: "Create the directory /srv/pillar/ceph/proposals/"
+  file:
+    path: "/srv/pillar/ceph/proposals/"
+    state: "directory"
+    owner: "salt"
+    group: "salt"
+    mode: "0755"
+
 - name: "Create /srv/pillar/ceph/proposals/policy.cfg from template"
   template:
     src: "srv_pillar_ceph_proposals_policy.cfg.j2"

@@ -28,6 +28,11 @@ role-rgw/cluster/*-suse-ses-mon0*.sls
 # NFS
 role-ganesha/cluster/*-suse-ses-mon0*.sls
 
+{% if ansible_distribution == "SLES" and ansible_distribution_major_version == "12" %}
+# openAttic
+role-openattic/cluster/*-suse-ses-admin*.sls
+
+{% endif %}
 # COMMON
 config/stack/default/global.yml
 config/stack/default/ceph/cluster.yml

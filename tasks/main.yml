@@ -56,3 +56,6 @@
     owner: "salt"
     group: "salt"
     mode: "0644"
+
+- include_tasks: ntp_sles12.yml
+  when: ansible_distribution == "SLES" and ansible_distribution_major_version == "12"

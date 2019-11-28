@@ -17,6 +17,10 @@
   package:
     name: "{{ admin_node_deepsea_packages }}"
 
+- name: "Install additional packages"
+  package:
+    name: "{{ admin_node_additional_packages }}"
+
 - name: "Create the directory /srv/pillar/ceph/stack/ceph/"
   file:
     path: "/srv/pillar/ceph/stack/ceph/"

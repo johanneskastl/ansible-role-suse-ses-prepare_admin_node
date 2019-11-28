@@ -13,13 +13,17 @@
     group: "salt"
     mode: "0755"
 
-- name: "Create /srv/pillar/ceph/stack/ceph/cluster.yml from template"
-  template:
-    src: "srv_pillar_ceph_stack_ceph_cluster.yml.j2"
-    dest: "/srv/pillar/ceph/stack/ceph/cluster.yml"
+- name: "Add networks to /srv/pillar/ceph/stack/ceph/cluster.yml"
+  lineinfile:
+    path: "/srv/pillar/ceph/stack/ceph/cluster.yml"
+    regexp: "^{{ item }}$"
+    line: "{{ item }}"
     owner: "salt"
     group: "salt"
     mode: "0644"
+  with_items:
+    - "public_network: {{ public_network }}"
+    - "cluster_network: {{ cluster_network }}"
 
 - name: "Create /srv/pillar/ceph/master_minion.sls from template"
   template:

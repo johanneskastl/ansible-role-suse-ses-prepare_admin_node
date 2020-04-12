@@ -11,7 +11,8 @@ galaxy_info:
   platforms:
   - name: SLES
     versions:
-    - all
+    - 12
+    - 15
 
   galaxy_tags: []
 

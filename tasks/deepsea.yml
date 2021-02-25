@@ -5,22 +5,15 @@
   package:
     name: "{{ admin_node_deepsea_packages }}"
 
-- name: "Create the directory /srv/pillar/ceph/stack/ceph/"
-  file:
-    path: "/srv/pillar/ceph/stack/ceph/"
-    state: "directory"
-    owner: "salt"
-    group: "salt"
-    mode: "0755"
-
-- name: "Add networks to /srv/pillar/ceph/stack/ceph/cluster.yml"
+- name: "Add networks to /srv/pillar/ceph/stack/global.yml"
   lineinfile:
-    path: "/srv/pillar/ceph/stack/ceph/cluster.yml"
+    path: "/srv/pillar/ceph/stack/global.yml"
     regexp: "^{{ item }}$"
     line: "{{ item }}"
     owner: "salt"
     group: "salt"
     mode: "0644"
+    create: "true"
   with_items:
     - "public_network: {{ public_network }}"
     - "cluster_network: {{ cluster_network }}"

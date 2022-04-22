@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'suse-ses-prepare_admin_node'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'Prepare the admin node for a SUSE Enterprise Storage Cluster'
   company: 'B1 Systems GmbH'

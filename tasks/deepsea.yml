@@ -2,11 +2,11 @@
 # suse-ses-prepare_admin_node/tasks/main.yml
 
 - name: "Install deepsea packages"
-  package:
+  ansible.builtin.package:
     name: "{{ admin_node_deepsea_packages }}"
 
 - name: "Add networks to /srv/pillar/ceph/stack/global.yml"
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: "/srv/pillar/ceph/stack/global.yml"
     regexp: "^{{ item }}$"
     line: "{{ item }}"
@@ -19,7 +19,7 @@
     - "cluster_network: {{ cluster_network }}"
 
 - name: "Create /srv/pillar/ceph/master_minion.sls from template"
-  template:
+  ansible.builtin.template:
     src: "srv_pillar_ceph_master_minion.sls.j2"
     dest: "/srv/pillar/ceph/master_minion.sls"
     owner: "salt"
@@ -27,7 +27,7 @@
     mode: "0644"
 
 - name: "Create the directory /srv/pillar/ceph/proposals/"
-  file:
+  ansible.builtin.file:
     path: "/srv/pillar/ceph/proposals/"
     state: "directory"
     owner: "salt"
@@ -35,7 +35,7 @@
     mode: "0755"
 
 - name: "Create /srv/pillar/ceph/proposals/policy.cfg from template"
-  template:
+  ansible.builtin.template:
     src: "srv_pillar_ceph_proposals_policy.cfg.j2"
     dest: "/srv/pillar/ceph/proposals/policy.cfg"
     owner: "salt"

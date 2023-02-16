@@ -10,4 +10,6 @@
     name: "{{ admin_node_additional_packages }}"
 
 - ansible.builtin.include_tasks: ntp_sles12.yml
-  when: ansible_distribution == "SLES" and ansible_distribution_major_version == "12"
+  when:
+    - 'ansible_distribution == "SLES"'
+    - 'ansible_distribution_major_version == "12"'

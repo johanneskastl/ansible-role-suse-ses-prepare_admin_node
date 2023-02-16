@@ -12,4 +12,4 @@
 - ansible.builtin.include_tasks: ntp_sles12.yml
   when:
     - 'ansible_distribution == "SLES"'
-    - 'ansible_distribution_major_version == "12"'
+    - 'ansible_distribution_major_version | int == 12'

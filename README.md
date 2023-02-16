@@ -29,7 +29,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: 'johanneskastl.suse-ses-prepare_admin_node' }
+         - role: 'johanneskastl.suse-ses-prepare_admin_node'
 
 License
 -------

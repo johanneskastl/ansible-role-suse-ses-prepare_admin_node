@@ -1,14 +1,14 @@
 ---
 # suse-ses-prepare_admin_node/tasks/salt_master_and_deepsea.yml
 
-- name: "Install salt-master and salt-minion packages"
+- name: 'Install salt-master and salt-minion packages'
   ansible.builtin.package:
     name: "{{ admin_node_salt_packages }}"
 
-- name: "Start the salt services"
+- name: 'Start the salt services'
   ansible.builtin.service:
     name: "{{ item }}"
-    state: "started"
-    enabled: "true"
+    state: 'started'
+    enabled: 'true'
   with_items:
     - "{{ admin_node_salt_services }}"

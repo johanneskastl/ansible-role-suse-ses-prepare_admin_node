@@ -1,15 +1,18 @@
 ---
 # suse-ses-prepare_admin_node/tasks/main.yml
 
-- ansible.builtin.include_tasks: salt_master.yml
+- name: 'Run salt_master.yml'
+  ansible.builtin.include_tasks: salt_master.yml
 
-- ansible.builtin.include_tasks: deepsea.yml
+- name: 'Run deepsea.yml'
+  ansible.builtin.include_tasks: deepsea.yml
 
-- name: "Install additional packages"
+- name: 'Install additional packages'
   ansible.builtin.package:
     name: "{{ admin_node_additional_packages }}"
 
-- ansible.builtin.include_tasks: ntp_sles12.yml
+- name: 'Run ntp_sles12.yml'
+  ansible.builtin.include_tasks: ntp_sles12.yml
   when:
     - 'ansible_distribution == "SLES"'
     - 'ansible_distribution_major_version | int == 12'

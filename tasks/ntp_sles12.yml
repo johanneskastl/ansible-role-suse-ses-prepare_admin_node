@@ -8,6 +8,6 @@
 
 - name: 'Enable and start the ntpd service (on SLES12 only)'
   ansible.builtin.service:
-   name: 'ntpd'
-   state: 'started'
-   enabled: true
+    name: 'ntpd'
+    state: 'started'
+    enabled: true
